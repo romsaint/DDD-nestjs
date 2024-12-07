@@ -1,0 +1,23 @@
+services:
+  ddd:
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - 3000:3000
+    env_file:
+      - ./.env
+    container_name: ddd-project
+    environment:
+      - ENVIRONMENT=prod
+
+  postgres:
+    image: postgres
+    ports:
+      - 5430:5432
+    env_file:
+      - ./.env
+    environment:
+      - POSTGRES_USER=${POSTGRE_NAME}
+      - POSTGRES_PASSWORD=${POSTGRE_PASSWORD}
+      - POSTGRES_DB=${POSTGRE_DBNAME}
