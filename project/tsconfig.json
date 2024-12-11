@@ -19,11 +19,15 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@UserDTO": ["src/domain/user/user.dto"],
-      "@UserService": ["src/app/user/user.service"],
-      "@IuserRepo": ["src/domain/user/user.interface.repo"],
+      "@UserService": ["src/domain/user/user.service"],
+      "@IUserRepo": ["src/domain/user/interfaces/user.interface.repo"],
+      "@IPostRepo": ["src/domain/post/interfaces/post.interface.repo"],
+      "@IPostService": ["src/domain/post/interfaces/post.service.interface"],
+      "@IUserService": ["src/domain/user/interfaces/user.service.interface"],
       "@UserDBRepo": ["src/infrastructure/database/user.db.repo"],
       "@UserDBRepoProvider": ["src/infrastructure/providers/userDBRepo.provider"],
-      "@UserServiceProvider": ["src/app/providers/user.provider"],
+      "@UserServiceProvider": ["src/domain/user/providers/userService.provider"],
+      "@PostServiceProvider": ["src/domain/post/providers/postService.provider"],
       "@User": ["src/infrastructure/database/user.schema"],
       "@TypeORMModule": ["src/infrastructure/database/typeorm.module"],
     }

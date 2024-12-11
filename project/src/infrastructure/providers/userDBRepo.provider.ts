@@ -1,4 +1,4 @@
-import { UserDBRepo } from "@UserDBRepo";
+import { UserDBRepo } from "src/infrastructure/database/postgres/user/user.db.repo";
 
 const nameService = 'UserDBRepo'
 

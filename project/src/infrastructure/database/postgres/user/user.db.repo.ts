@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { User } from "@User";
+import { User } from "src/infrastructure/database/postgres/user/user.schema";
 import { MoreThan, Repository } from "typeorm";
-import { IUserRepo } from '@IuserRepo';
+import { IUserRepo } from '@IUserRepo';
 import { UserDTO } from "@UserDTO"
 
 @Injectable()

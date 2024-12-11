@@ -1,7 +1,7 @@
 import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
-import { User } from "@User";
+import { User } from "src/infrastructure/database/postgres/user/user.schema";
 import { UserDBRepoProvider, UserDBRepoProviderName } from "@UserDBRepoProvider";
 
 @Module({
@@ -29,4 +29,4 @@ import { UserDBRepoProvider, UserDBRepoProviderName } from "@UserDBRepoProvider"
     exports: [UserDBRepoProviderName.USER_DB_REPO]
 })
 
-export class MyDbModule { }
+export class PostgreDataBaseModule { }

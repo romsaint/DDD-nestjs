@@ -1,20 +1,14 @@
-import { Controller, Get, Inject } from '@nestjs/common';
-import { UserService } from '@UserService';
-import { UserProviderName } from '@UserServiceProvider';
+import { Controller, Get, Inject, ParseIntPipe, Query } from '@nestjs/common';
+import { ApiService } from 'src/api/services/apiService.service';
 
 @Controller('user')
 export class UserController {
   constructor(
-    @Inject(UserProviderName.USERS_SERVICE) private readonly userService: UserService
+    private readonly apiService: ApiService
   ) {}
 
-  @Get('all')
-  getAll() {
-    return this.userService.getAll()
-  }
-
-  @Get('')
-  async get() {
-    return 52
+  @Get()
+  async getPosts(@Query('id', ParseIntPipe) id: number) {
+    return await this.apiService.getPosts(id)
   }
 }

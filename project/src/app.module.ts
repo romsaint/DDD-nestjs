@@ -1,13 +1,15 @@
 import { Module } from '@nestjs/common';
-import { MyDbModule } from './infrastructure/database/typeorm.module';
-import { UserModule } from './app/user/user.module';
+import { PostgreDataBaseModule } from './infrastructure/database/modules/typeorm.module';
 import { ControllerModule } from './presentation/controller.module';
+import { MongoDatabaseModule } from './infrastructure/database/modules/mongo.module';
+import { DomainModule } from './domain/domain.module';
 
 @Module({
   imports: [
-    MyDbModule,
-    UserModule,
-    ControllerModule
+    PostgreDataBaseModule,
+    MongoDatabaseModule,
+    ControllerModule,
+    DomainModule
   ],
   controllers: [],
   providers: [],
