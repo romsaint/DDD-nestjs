@@ -4,7 +4,6 @@ import { DomainModule } from "src/domain/domain.module";
 
 
 @Module({
-    imports: [DomainModule],
     controllers: [UserController]
 })
 export class ControllerModule {}

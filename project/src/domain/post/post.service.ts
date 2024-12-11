@@ -3,6 +3,7 @@ import { IPostRepo } from "@IPostRepo";
 import { PostSchema } from "src/infrastructure/database/mongodb/post/post.schema";
 import { IPostService } from "./interfaces/post.service.interface";
 import { PostMongoDBRepoProviderName } from "src/infrastructure/providers/postMongoRepo.provider";
+import { MongoPostRepository } from "src/infrastructure/database/mongodb/post/post.repo";
 
 @Injectable()
 export class PostService implements IPostService {

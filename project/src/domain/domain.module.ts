@@ -8,7 +8,7 @@ import { PostMongoDBRepoProvider, PostMongoDBRepoProviderName } from "src/infras
 
 @Module({
     imports: [MongoDatabaseModule, PostgreDataBaseModule],
-    providers: [PostServiceProvider, UserServiceProvider, PostMongoDBRepoProvider, UserDBRepoProvider],
+    providers: [PostServiceProvider, UserServiceProvider],
     exports: [PostServiceProviderName.POST_SERVICE, UserServiceProviderName.USER_SERVICE],
 })
 export class DomainModule { }

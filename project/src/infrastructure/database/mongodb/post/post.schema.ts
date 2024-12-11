@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
-
+import { Document } from 'mongoose';
 // @Prop({ enum: ['admin', 'user', 'guest'] }) -  Ограничивает возможные значения поля.
 
 @Schema()
-export class PostSchema {
+export class PostSchema extends Document {
     @Prop()
     text: string
 
@@ -14,4 +14,4 @@ export class PostSchema {
     createdAt: Date;
 }
 
-export const Post = SchemaFactory.createForClass(PostSchema)
+export const PostMongoSchema = SchemaFactory.createForClass(PostSchema)
