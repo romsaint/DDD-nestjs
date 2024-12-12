@@ -3,17 +3,18 @@ import { PostgreDataBaseModule } from './infrastructure/database/modules/typeorm
 import { MongoDatabaseModule } from './infrastructure/database/modules/mongo.module';
 import { DomainModule } from './domain/domain.module';
 import { UserController } from './presentation/user/user.controller';
-import { ApiService } from './api/services/apiService.service';
 import { ApiModule } from './api/api.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { PostController } from './presentation/post/post.controller';
 
 @Module({
   imports: [
     PostgreDataBaseModule,
     MongoDatabaseModule,
     DomainModule,
-    ApiModule
+    EventEmitterModule.forRoot({})
   ],
-  controllers: [UserController],
+  controllers: [UserController, PostController],
   providers: [],
 })
 
