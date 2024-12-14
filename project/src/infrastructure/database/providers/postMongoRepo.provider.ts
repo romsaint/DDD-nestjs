@@ -1,4 +1,4 @@
-import { MongoPostRepository } from "../database/mongodb/post/post.repo"
+import { MongoPostRepository } from "../mongodb/post/post.repo"
 
 const nameService = 'MongoPostRepository'
 

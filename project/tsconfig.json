@@ -25,7 +25,7 @@
       "@IPostService": ["src/domain/post/interfaces/post.service.interface"],
       "@IUserService": ["src/domain/user/interfaces/user.service.interface"],
       "@UserDBRepo": ["src/infrastructure/database/user.db.repo"],
-      "@UserDBRepoProvider": ["src/infrastructure/providers/userDBRepo.provider"],
+      "@UserDBRepoProvider": ["src/infrastructure/database/providers/userDBRepo.provider"],
       "@UserServiceProvider": ["src/domain/user/providers/userService.provider"],
       "@PostServiceProvider": ["src/domain/post/providers/postService.provider"],
       "@User": ["src/infrastructure/database/user.schema"],
