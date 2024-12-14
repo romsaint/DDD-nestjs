@@ -2,7 +2,7 @@ import { Module } from "@nestjs/common";
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { User } from "src/infrastructure/database/postgres/user/user.schema";
-import { UserDBRepoProvider, UserDBRepoProviderName } from "@UserDBRepoProvider";
+import { UserDBRepo } from "../postgres/user/user.db.repo";
 
 @Module({
     imports: [
@@ -25,8 +25,7 @@ import { UserDBRepoProvider, UserDBRepoProviderName } from "@UserDBRepoProvider"
         }),
         TypeOrmModule.forFeature([User])
     ],
-    providers: [UserDBRepoProvider],
-    exports: [UserDBRepoProviderName.USER_DB_REPO]
+    providers: [UserDBRepo]
 })
 
 export class PostgreDataBaseModule { }
