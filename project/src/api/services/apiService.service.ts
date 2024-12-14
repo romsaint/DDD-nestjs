@@ -10,6 +10,6 @@ export class ApiService implements IApiService {
 
     @OnEvent('post.getPosts')
     async getPosts(id: number) {
-        return (await this.eventEmitter2.emitAsync('post.getPosts'))[0]
+        return (await this.eventEmitter2.emitAsync('post.getPosts', {id}))[0]
     }
 }
