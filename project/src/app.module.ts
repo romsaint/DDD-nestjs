@@ -4,6 +4,7 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { PostController } from './presentation/post/post.controller';
 import { DomainModule } from './domain/domain.module';
 
+
 @Module({
   imports: [
     EventEmitterModule.forRoot({}),

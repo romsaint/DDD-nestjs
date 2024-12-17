@@ -10,12 +10,4 @@ export class User {
 
     @Column()
     password: string
-
-    setPassword(password) {
-        return this.password = password + 'Hashed'
-    }
-
-    comparePassword(password) {
-        return this.password === password
-    }
 }

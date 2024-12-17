@@ -1,5 +1,5 @@
 import { UserDTO } from "@UserDTO"
-import { User } from "src/infrastructure/database/postgres/user/user.schema"
+import { User } from "@User"
 
 export interface IUserService {
     getAll(): Promise<User[]>

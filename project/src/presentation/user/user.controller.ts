@@ -1,6 +1,5 @@
 import { Body, Controller, Get, ParseIntPipe, Post, Query } from '@nestjs/common';
 import { EventEmitter2 } from '@nestjs/event-emitter';
-import { UserDTO } from '@UserDTO';
 
 @Controller('user')
 export class UserController {
@@ -18,13 +17,6 @@ export class UserController {
   @Get('getAll')
   async getAll() {
     const data = (await this.eventEmitter2.emitAsync('user.getAll'))[0]
-    
-    return data
-  }
-
-  @Post('save')
-  async saveUser(@Body() user: UserDTO) {
-    const data = (await this.eventEmitter2.emitAsync('user.save', user))[0]
     
     return data
   }

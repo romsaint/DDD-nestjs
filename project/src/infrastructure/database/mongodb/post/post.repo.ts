@@ -13,14 +13,21 @@ export class MongoPostRepository implements IPostRepo {
 
     @OnEvent('post.repo.getPosts')
     async getPosts(): Promise<PostSchema[]> {
-        
-        return await this.postMongo.find()
+        try{
+            return await this.postMongo.find()
+        }catch(e) {
+            throw new Error(e)
+        }
     }
 
-    @OnEvent('post.repo.createTestPosts')
+    @OnEvent('post.repo.createTestPost')
     async createPosts(): Promise<PostSchema> {
-        const post: CreatePostEntity = {text: 'Hello', user_id: 1}
+        try{
+            const post: CreatePostEntity = {text: 'Hello', user_id: 1}
 
-        return await this.postMongo.create(post)
+            return await this.postMongo.create(post)
+        }catch(e) {
+            throw new Error(e)
+        }
     }
 }

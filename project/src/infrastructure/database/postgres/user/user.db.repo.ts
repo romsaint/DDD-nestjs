@@ -10,21 +10,32 @@ import { OnEvent } from "@nestjs/event-emitter";
 export class UserDBRepo implements IUserRepo {
     constructor(
         @InjectRepository(User) private readonly ormRepository: Repository<User>
-    ) {}
-    
+    ) { }
+
     @OnEvent('user.repo.save')
     async save(user: UserDTO): Promise<User> {
-        return await this.ormRepository.save(user)
+        try {
+            return await this.ormRepository.save(user)
+        } catch (e) {
+            throw new Error(e)
+        }
     }
 
     @OnEvent('user.repo.getById')
     async getById(id: number): Promise<User> {
-  
-        return await this.ormRepository.findOne({where: {id}})
+        try {
+            return await this.ormRepository.findOne({ where: { id } })
+        } catch (e) {
+            throw new Error(e)
+        }
     }
-    
+
     @OnEvent('user.repo.getAll')
     async getAll(): Promise<User[]> {
-        return this.ormRepository.find()
+        try {
+            return this.ormRepository.find()
+        } catch (e) {
+            throw new Error(e)
+        }
     }
 }

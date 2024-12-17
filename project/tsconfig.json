@@ -25,7 +25,7 @@
       "@IPostService": ["src/domain/post/interfaces/post.service.interface"],
       "@IUserService": ["src/domain/user/interfaces/user.service.interface"],
       "@UserDBRepo": ["src/infrastructure/database/user.db.repo"],
-      "@User": ["src/infrastructure/database/user.schema"],
+      "@User": ["src/infrastructure/database/postgres/user/user.schema"],
       "@TypeORMModule": ["src/infrastructure/database/typeorm.module"],
     }
   }
